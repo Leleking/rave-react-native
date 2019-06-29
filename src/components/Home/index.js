@@ -8,14 +8,14 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 export default class index extends Component {
     constructor(props) {
         super(props);
-
-        this.closeRave = this.closeRave.bind(this);
+        //this.closeRave = this.closeRave.bind(this);
     }
 
-    closeRave() {
+    closeRave = () => {
         this.props.onClose();
     }
 
+    
     render() {
 
         const styles = StyleSheet.create({
@@ -41,12 +41,12 @@ export default class index extends Component {
             <KeyboardAvoidingView behavior="padding" enabled>
                 <KeyboardAwareScrollView style={styles.container} keyboardShouldPersistTaps='always'>
                     <View style={{ flex: 1 }}>
-                        <View style={{ marginTop: 30, flexDirection: 'row', justifyContent: "space-between" }}><Text style={{ fontSize: 13, fontWeight: '400' }}>{lockIcon} SECURED BY FLUTTERWAVE</Text>
-                            <TouchableOpacity onPress={this.closeRave}>{closeIcon}</TouchableOpacity>
+                        <View style={{ marginTop: 30, flexDirection: 'row', justifyContent: "space-between" }}><Text style={{ fontSize: 13, fontWeight: '400' }}>{lockIcon} </Text>
+                            <TouchableOpacity onPress={() => {this.closeRave()}}>{closeIcon}</TouchableOpacity>
                         </View>
                         <Text style={styles.text}>How would you</Text>
                         <Text style={{ fontSize: 42, fontWeight: '700', paddingTop: 10, color: '#12122c' }}>like to pay? </Text>
-                        <View style={{ borderBottomWidth: 4, marginTop: 30, marginRight: '50%', borderBottomColor: '#F5A623' }}></View>
+                        <View style={{ borderBottomWidth: 4, marginTop: 30, marginRight: '50%', borderBottomColor: '#ff4c52' }}></View>
                     </View>
                 </KeyboardAwareScrollView>
             </KeyboardAvoidingView>

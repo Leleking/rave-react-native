@@ -28,7 +28,7 @@ import Home from './src/components/Home';
 export default class Rave extends React.Component {
   constructor(props) {
     super(props);
-    this.rave = new RavePayment({ publicKey: props.publickey, encryptionKey: props.encryptionkey, production: props.production, currency: props.currency, country: props.country, txRef: props.txref, amount: props.amount, email: props.email, firstname: props.firstname, lastname: props.lastname, subaccounts: props.subaccounts, meta: props.meta, threeDsOverride: props.threeDsOverride, redirectUrl: props.redirecturl, paymentPlan: props.paymentplan });
+    this.rave = new RavePayment({ publicKey: props.publickey, encryptionKey: props.encryptionkey, production: props.production, currency: props.currency, country: props.country, txRef: props.txref, amount: props.amount, email: props.email, firstname: props.firstname, lastname: props.lastname, subaccounts: props.subaccounts, meta: props.meta, threeDsOverride: props.threeDsOverride, redirectUrl: props.redirecturl });
     this.ravempesa = new RaveMpesa({ publicKey: props.publickey, encryptionKey: props.encryptionkey, production: props.production, currency: props.currency, country: props.country, txRef: props.txref, is_mpesa: props.is_mpesa, amount: props.amount, email: props.email, firstname: props.firstname, lastname: props.lastname, meta: props.meta });
     this.ravemmoney = new RaveMmoney({ publicKey: props.publickey, encryptionKey: props.encryptionkey, production: props.production, currency: props.currency, country: props.country, txRef: props.txref, is_ussd: props.is_ussd, amount: props.amount, email: props.email, firstname: props.firstname, lastname: props.lastname, meta: props.meta });
     this.raveugandamobilemoney = new RaveUgandaMobileMoney({ publicKey: props.publickey, encryptionKey: props.encryptionkey, production: props.production, currency: props.currency, country: props.country, txRef: props.txref, amount: props.amount, email: props.email, firstname: props.firstname, lastname: props.lastname, meta: props.meta });
@@ -79,7 +79,7 @@ export default class Rave extends React.Component {
       } else {
         header1 = <MpesaHeader page={this.getPage} showOne={this.show} bottomOne={this.state.bottomOne} colorOne={this.state.colorOne} />;
         header2 = <CardHeader page={this.getPage} showTwo={this.show} bottomTwo={this.state.bottomTwo} colorTwo={this.state.colorTwo} />
-        page = <Home onClose={this.props.onClose} />;
+        page = <Home />;
       }
     } else if (this.props.country == 'GH' && this.props.currency == 'GHS') {
       if (this.state.page == 'home') {
@@ -139,7 +139,7 @@ export default class Rave extends React.Component {
       } else {
         header1 = <UgMmoneyHeader page={this.getPage} showOne={this.show} bottomOne={this.state.bottomOne} colorOne={this.state.colorOne} />;
         header2 = <CardHeader page={this.getPage} showTwo={this.show} bottomTwo={this.state.bottomTwo} colorTwo={this.state.colorTwo} />;
-        page = <Home onClose={this.props.onClose} />;
+        page = <Home />;
       }
     }else if (this.props.currency == 'ZMW') {
         if (this.state.page == 'home') {
@@ -169,7 +169,7 @@ export default class Rave extends React.Component {
         } else {
           header1 = <ZMmoneyHeader page={this.getPage} showOne={this.show} bottomOne={this.state.bottomOne} colorOne={this.state.colorOne} />;
           header2 = <CardHeader page={this.getPage} showTwo={this.show} bottomTwo={this.state.bottomTwo} colorTwo={this.state.colorTwo} />;
-          page = <Home onClose={this.props.onClose} />;
+          page = <Home />;
         }
     } else {
       if (this.state.page == 'home') {
@@ -245,8 +245,7 @@ Rave.propTypes = {
   subaccounts: PropTypes.array,
   threeDsOverride: PropTypes.number,
   meta: PropTypes.array,
-  redirecturl: PropTypes.string,
-  paymentplan: PropTypes.number
+  redirecturl: PropTypes.string
 }
 
 let transactionReference = "txref-" + Date.now();

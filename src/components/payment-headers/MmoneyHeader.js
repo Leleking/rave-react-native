@@ -40,13 +40,13 @@ export default class MmoneyHeader extends Component {
                 position: 'absolute'
             },
             nav: {
-                backgroundColor: '#fbeed8',
+                backgroundColor: '#323643',
                 shadowOffset: { width: 0, height: 1 },
                 shadowOpacity: 0.8,
                 shadowRadius: 2,
                 elevation: 5,
                 borderBottomWidth: 1,
-                borderBottomColor: '#f2f2f2',
+                borderBottomColor: '#323643',
                 paddingHorizontal: 30,
                 flexDirection: 'row',
                 justifyContent: 'center',
@@ -58,7 +58,8 @@ export default class MmoneyHeader extends Component {
             text: {
                 fontSize: 16,
                 textAlign: 'center',
-                color: this.props.colorOne
+                //color: this.props.colorOne
+                color:'white'
             }
         });
 

@@ -96,6 +96,7 @@ export default class index extends Component {
         })
         // A check to return a response with further instructions to the user based on selected network
           if (this.state.network === "MTN") {
+              ('mtn')
               Alert.alert(
               'Follow the instruction below to complete your MTN transaction',
               '1. Dial *170#\n2. Choose Option 7: Wallet\n3. Choose Option 3: My Approvals\n4. Enter your MOMO pin to retrieve your pending approval list\n5. Choose a pending transaction\n6. Choose option 1 to approve\n7. Tap button to continue',
@@ -157,8 +158,9 @@ export default class index extends Component {
               }
             )
           }
+          
           this.props.onSuccess(res);
-            Alert.alert(
+            /* Alert.alert(
               '',
               'Transaction Successfully Completed',
               [{
@@ -172,7 +174,7 @@ export default class index extends Component {
               ], {
                 cancelable: false
               }
-            )
+            ) */
           }
     }).catch((e) => {
       this.setState({

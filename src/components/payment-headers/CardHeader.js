@@ -42,7 +42,7 @@ export default class CardHeader extends Component {
         position: 'absolute'
       },
       nav: {
-        backgroundColor: '#fbeed8',
+        backgroundColor: '#323643',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.8,
         shadowRadius: 2,
@@ -57,7 +57,8 @@ export default class CardHeader extends Component {
       text: {
         fontSize: 16,
         textAlign: 'center',
-        color: this.props.colorTwo
+        //color: this.props.colorTwo
+        color:'white'
       }
     });
 
